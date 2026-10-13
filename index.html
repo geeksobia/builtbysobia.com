@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Sobia’s little corner of the internet: data, code, projects, and curiosity."
+    />
+    <title>Built by Sobia — a little internet corner</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: #fff9ed;
+        background-image: radial-gradient(#ded4df 0.8px, transparent 0.8px);
+        background-size: 23px 23px;
+        color: #332844;
+        font-family: system-ui, sans-serif;
+        line-height: 1.7;
+      }
+      a {
+        color: #7149ae;
+        text-underline-offset: 4px;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid #7149ae;
+        outline-offset: 5px;
+      }
+      .wrap {
+        max-width: 960px;
+        margin: auto;
+        padding: 0 26px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 28px 0;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transform: rotate(-2deg);
+        color: #332844;
+      }
+      .links {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+      .links a {
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .hero {
+        padding: 65px 0 75px;
+        position: relative;
+      }
+      .sticker {
+        display: inline-block;
+        background: #f6e5a9;
+        padding: 5px 13px;
+        border: 1px solid #332844;
+        border-radius: 5px;
+        transform: rotate(-2deg);
+        font-size: 0.8rem;
+      }
+      .star {
+        position: absolute;
+        right: 15px;
+        top: 75px;
+        font-size: 80px;
+        color: #dd9639;
+        transform: rotate(12deg);
+      }
+      h1 {
+        font-size: clamp(2.8rem, 7vw, 4.8rem);
+        line-height: 1.1;
+        letter-spacing: -0.055em;
+        max-width: 760px;
+        margin: 28px 0 24px;
+      }
+      h1 span {
+        color: #7149ae;
+      }
+      .intro {
+        max-width: 580px;
+        font-size: 1.1rem;
+        color: #70647a;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 18px;
+        background: #7149ae;
+        color: white;
+        border: 1px solid #332844;
+        border-radius: 8px;
+        box-shadow: 3px 4px #332844;
+        text-decoration: none;
+        font-weight: 650;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      .button:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 1px 2px #332844;
+      }
+      .scribble {
+        display: inline-block;
+        margin-left: 20px;
+        color: #70647a;
+        font-style: italic;
+        transform: rotate(-3deg);
+      }
+      section {
+        padding: 42px 0;
+        border-top: 1px dashed #cbbbd7;
+        scroll-margin-top: 25px;
+      }
+      h2 {
+        font-size: 1.6rem;
+        letter-spacing: -0.035em;
+        margin: 0 0 10px;
+      }
+      h3 {
+        margin: 10px 0;
+        font-size: 1.1rem;
+      }
+      .muted {
+        color: #70647a;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin: 30px 0 10px;
+      }
+      .card {
+        padding: 25px;
+        border: 1.5px solid #332844;
+        border-radius: 10px;
+        box-shadow: 4px 5px #ded0ed;
+      }
+      .card:nth-child(1) {
+        background: #efe6ff;
+        transform: rotate(-1deg);
+      }
+      .card:nth-child(2) {
+        background: #fff0c5;
+        transform: rotate(1deg);
+      }
+      .card:nth-child(3) {
+        background: #e4f1e6;
+        transform: rotate(-0.5deg);
+      }
+      .icon {
+        font-size: 1.7rem;
+      }
+      .card p {
+        font-size: 0.94rem;
+        color: #65596f;
+      }
+      .label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+      }
+      .note {
+        border: 1.5px dashed #7149ae;
+        background: #fffdf8;
+        border-radius: 12px;
+        padding: 28px;
+        margin-top: 24px;
+      }
+      .about {
+        max-width: 680px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .chip {
+        background: #fffdf8;
+        border: 1px solid #cbbbd7;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+      }
+      .tiny {
+        font-size: 0.85rem;
+      }
+      .toy {
+        margin-top: 22px;
+        background: #f0e7ff;
+        border: 1px solid #cbbbd7;
+        padding: 18px;
+        border-radius: 10px;
+      }
+      .toy button {
+        background: #fffdf8;
+        border: 1px solid #332844;
+        border-radius: 6px;
+        padding: 8px 12px;
+        cursor: pointer;
+        color: #332844;
+        font: inherit;
+      }
+      .toy output {
+        display: block;
+        margin-top: 12px;
+        color: #65596f;
+      }
+      footer {
+        padding: 25px 0;
+        margin-top: 15px;
+        background: #efe6ff;
+        font-size: 0.85rem;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .skip {
+        position: absolute;
+        top: -100px;
+        background: white;
+        padding: 10px;
+        z-index: 5;
+      }
+      .skip:focus {
+        top: 10px;
+      }
+      @media (max-width: 700px) {
+        nav {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .hero {
+          padding: 40px 0 55px;
+        }
+        .star {
+          top: 0;
+          font-size: 42px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .scribble {
+          display: block;
+          margin: 20px 0 0;
+        }
+        .links {
+          gap: 20px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .button {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#">built by sobia ✦</a>
+        <div class="links">
+          <a href="#projects">Things I’m building</a><a href="#notes">Notes</a
+          ><a href="#about">The human</a>
+        </div>
+      </nav>
+      <main id="main">
+        <div class="hero">
+          <span class="sticker">a small corner of a very big internet</span
+          ><span class="star" aria-hidden="true">✦</span>
+          <h1>
+            Hi, I’m Sobia.<br /><span>I make data behave.</span><br />Mostly.
+          </h1>
+          <p class="intro">
+            Data engineer, curious learner, and a person who likes making things
+            with code. This is my little home for projects, experiments, and
+            things I figure out along the way.
+          </p>
+          <a class="button" href="#projects">Take a look around ↗</a
+          ><span class="scribble">no pitch deck, promise.</span>
+        </div>
+        <section id="projects">
+          <h2>The project shelf 🛠️</h2>
+          <p class="muted">
+            Still arranging the shelves. Real projects and their stories are
+            coming soon.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <span class="icon" aria-hidden="true">🧩</span>
+              <h3>Data things</h3>
+              <p>
+                A future home for pipelines, transformations, and making messy
+                data a little less messy.
+              </p>
+              <span class="label">Shelf reserved · coming soon</span>
+            </article>
+            <article class="card">
+              <span class="icon" aria-hidden="true">🌱</span>
+              <h3>Little experiments</h3>
+              <p>
+                Side quests, curious ideas, and projects that start with “what
+                happens if…?”
+              </p>
+              <span class="label">Shelf reserved · coming soon</span>
+            </article>
+            <article class="card">
+              <span class="icon" aria-hidden="true">🎨</span>
+              <h3>Creative detours</h3>
+              <p>
+                A spot for the overlap between code, digital art, and trying
+                something different.
+              </p>
+              <span class="label">Shelf reserved · coming soon</span>
+            </article>
+          </div>
+        </section>
+        <section id="notes">
+          <h2>Notes from the rabbit hole 🐇</h2>
+          <p class="muted">
+            Things I learned. Things I broke. Things that finally clicked.
+          </p>
+          <div class="note">
+            <span class="label">First entry still brewing</span>
+            <h3>An empty notebook, for now.</h3>
+            <p class="muted">
+              Soon: technical walkthroughs, project reflections, and the
+              occasional “ohhh, that’s how it works.”
+            </p>
+          </div>
+        </section>
+        <section id="about" class="about">
+          <h2>A human, not a pipeline 👋</h2>
+          <p>
+            I’m Sobia, a data engineer with a software engineering background. I
+            like breaking big, confusing problems into smaller, less confusing
+            ones.
+          </p>
+          <p class="muted">
+            Outside the data bits, I’m interested in business, finance, mathematics, shaking a leg,
+            and following a good idea wherever it leads. This website is part
+            notebook, part project shelf, and very much a work in progress.
+          </p>
+          <div class="chips">
+            <span class="chip">data & code</span
+            ><span class="chip">creative experiments</span
+            ><span class="chip">learning out loud</span>
+          </div>
+          <div class="toy">
+            <button id="thought" type="button">
+              A tiny thought for your visit ✨</button
+            ><output id="message" aria-live="polite"
+              >Press for a little pocket-sized encouragement.</output
+            >
+          </div>
+        </section>
+        <section id="hello">
+          <h2>Thanks for wandering in ✉️</h2>
+          <p class="muted">
+            My contact links are still unpacking their boxes. For now, consider
+            this a friendly wave from my corner of the internet.
+          </p>
+          <!-- Replace this paragraph with your real email or social links when ready. -->
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="wrap foot">
+        <span>Built by Sobia</span
+        ><span>Made with curiosity. Probably overthought.</span>
+      </div>
+    </footer>
+    <script>
+      const thoughts = [
+        "A small thing finished beats a perfect thing imagined.",
+        "Curiosity counts as a good reason to start.",
+        "Today’s confusing thing might be tomorrow’s blog post.",
+        "You’re allowed to build something just because it’s fun.",
+      ];
+      let i = 0;
+      document.getElementById("thought").addEventListener("click", () => {
+        document.getElementById("message").textContent =
+          thoughts[i++ % thoughts.length];
+      });
+    </script>
+  </body>
+</html>
